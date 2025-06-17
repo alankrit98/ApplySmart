@@ -1,7 +1,7 @@
 
-# 🚀 SkillMatch – Job Application Automation Platform
+# 🚀 ApplySmart – Job Application Automation Platform
 
-SkillMatch is an intelligent job application automation platform designed to help candidates effortlessly discover, manage, and apply for jobs that match their skills. It integrates with multiple job boards, offers AI-powered recommendations, and provides a seamless experience for users to track and tailor their applications.
+ApplySmart is an intelligent job application automation platform designed to help candidates effortlessly discover, manage, and apply for jobs that match their skills. It integrates with multiple job boards, offers AI-powered recommendations, and provides a seamless experience for users to track and tailor their applications.
 
 ---
 
@@ -80,8 +80,8 @@ SkillMatch is an intelligent job application automation platform designed to hel
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/skillmatch.git
-cd skillmatch
+git clone https://github.com/alankrit98/applysmart.git
+cd applysmart
 ```
 
 ### Install Dependencies
@@ -116,7 +116,7 @@ Make sure MongoDB is running locally or connected via MongoDB Atlas.
 ## 🧩 Folder Structure
 
 ```
-skillmatch/
+applysmart/
 ├── client/           # React frontend
 │   ├── components/
 │   ├── pages/
@@ -157,7 +157,7 @@ skillmatch/
 
 ## 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License[MIT LICENSE].
 
 ---
 
