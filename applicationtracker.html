@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Smart - Find Your Dream Job</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff;
+    }
+    .navbar {
+      background: rgb(255, 255, 255);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .navbar .nav-item {
+  margin-right: 15px; 
+}
+.navbar .nav-item:last-child {
+  margin-right: 0; 
+}
+
+    .navbar .btn {
+            transition: all 0.3s ease-in-out;
+
+    background: rgb(53, 53, 53); 
+    color: white;
+    border-radius: 8px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  padding: 10px 20px; 
+  font-size: 16px;
+  border: none;
+  }
+
+  .navbar .btn:hover {
+    background: rgb(53, 53, 53); 
+    transform: scale(1.05); 
+font-weight: 600;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+  }
+    .tracker {
+        display: flex;
+      align-items: center;
+  justify-content: space-between;
+  padding: 100px 0;
+    }
+    .tracker .btn {
+      transition: all 0.3s ease-in-out;
+      background: linear-gradient(45deg, #007bff, #00c6ff);
+      border: none;
+      color: rgb(255, 255, 255);
+    }
+    .tracker .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 198, 255, 0.5);
+    }
+    
+    .vidcontainer {
+      width: 100%;
+      max-width: 500px; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    video {
+      width: 100%;
+      height: auto;
+      border: none;
+    }
+    .slider {
+    background-color: #94a3b8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .slider h1 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .slider .btn {
+    background: linear-gradient(45deg, #007bff, #00c6ff);
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .slider .btn:hover {
+    background: linear-gradient(45deg, #00c6ff, #007bff);
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    transform: scale(1.05);
+  }
+  #vidworking{
+    width: 100%;
+    margin-right: 140px;
+      max-width: 500px; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      overflow: hidden;
+  }
+    .features i {
+      font-size: 50px;
+      color: #007bff;
+    }
+    .feature-box {
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      transition: 0.3s ease-in-out;
+    }
+    .feature-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+    .testimonial-slider {
+      background-color: #ffffff;
+      padding: 60px 0;
+    }
+    .testimonial-item {
+      background: rgb(150, 150, 150);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    .free-button{
+            transition: all 0.3s ease-in-out;
+
+        background-color: rgb(108, 134, 161);
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    .free-button:hover{
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(108, 134, 161, 0.5)
+
+    }
+    .footer {
+      background-color: #0f172a;
+      color: #cbd5e1;
+      padding: 40px 0;
+      font-size: 14px;
+    }
+    .footer a {
+      color: #94a3b8;
+      text-decoration: none;
+    }
+    .footer a:hover {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-primary" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" width="40" height="40" class="me-2" alt="White Fox Logo" />Apply Smart
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Application Tracker</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Resume Tools</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+          <li class="nav-item"><a class="nav-link" href="#working">How it Works!</a></li>
+<li class="nav-item">
+  <a class="btn btn-primary rounded-pill px-4" href="#" data-bs-toggle="modal" data-bs-target="#authModal">Login / Sign Up</a>
+</li>        </ul>
+      </div>
+    </div>
+  </nav> 
+  
+  <!--tracker-->
+   <section class="tracker d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+   
+    <!-- tarcker Content -->
+    <div >
+      <h1 class="display-4">Track your job search. Get hired faster.</h1>
+      <p class="lead">Simplify automatically saves job applications you submit to help you manage your<br> job search and follow up at the right time, every time.</p>
+        <a class="btn btn-primary rounded-pill px-4" href="#" data-bs-toggle="modal" data-bs-target="#authModal">Sign-up 100% FREE</a>
+
+    </div>
+
+  <!-- Video Section -->
+    <div class="vidcontainer me-4">
+      <video controls>
+        <source src="your-video-file.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</section>
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="authModalLabel">Login / Sign Up</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <iframe src="login-signup.html" frameborder="0" style="width: 100%; height: 500px;" title="Login or Sign Up"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--slider-->
+<section class="slider my-5 py-5">
+  <div id="sliderCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+    <div class="carousel-inner text-center" style="max-width: 800px; margin: 0 auto;">
+      
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <h1 class="mb-4">
+          Effortless Job <span style="color: yellow;">Applications</span>, Seamless Career <span style="color: yellow;">Growth</span>
+        </h1>
+        <a href="#" class="btn btn-sm mt-4 rounded-pill d-flex align-items-center justify-content-center gap-2" style="padding: 8px 16px; width: fit-content; margin: 0 auto; font-size: 14px;">
+          <img src="https://www.iconpacks.net/icons/2/free-rocket-icon-3431-thumb.png" alt="Rocket Icon" width="20" height="20" />
+          Get Started
+        </a>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <h1 class="mb-4">
+          Craft Perfect <span style="color: yellow;">Resumes</span> That Land <span style="color: yellow;">Interviews</span>.
+        </h1>
+        <a href="#" class="btn btn-sm mt-4 rounded-pill d-flex align-items-center justify-content-center gap-2" style="padding: 8px 16px; width: fit-content; margin: 0 auto; font-size: 14px;">
+          <img src="https://www.iconpacks.net/icons/2/free-rocket-icon-3431-thumb.png" alt="Rocket Icon" width="20" height="20" />
+          Get Started
+        </a>
+      </div>
+
+    </div>
+    
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#sliderCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#sliderCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+   <!-- Features Section --> 
+     <section class="py-5 features" id="features" data-aos="zoom-in">
+    <div class="container inner text-center">
+        <div class = "heading"  style = "margin-bottom: 100px;">
+            <h1> What We Do! </h1>
+        </div>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-rocket"></i>
+            <h4 class="mt-3">One-Click Apply</h4>
+            <p>Apply faster with pre-filled applications across companies.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-file-alt"></i>
+            <h4 class="mt-3">Smart Resume Builder</h4>
+            <p>Auto-fill your resume using AI and enhance your profile.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-box">
+            <i class="fas fa-filter"></i>
+            <h4 class="mt-3">Intelligent Filters</h4>
+            <p>Let the platform recommend jobs tailored to your profile.</p>
+          </div>
+            
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <h5 class="text-muted">⭐ 3+ reviews from happy users</h5>
+      </div>
+    </div>
+  </section>
+  
+  <!--Working-->
+  <section class = "working " id = "working" data-aos="fade-up">
+    <div class = "row mb-4 text-center">
+      <h1>How it Works?</h1>
+
+    </div>
+    <div class="row" style="margin-left: 200px; margin-top: 40px; display: flex; align-items: center; gap: 10px;">
+      <div class = "col md-4">
+    <h4 style="font-weight: 500; margin: 0;">
+      Automate Job <span style="color: #00c6ff;">Applications  <img 
+      src="https://cdn-icons-png.flaticon.com/512/16886/16886567.png" 
+      alt="Automation Icon" 
+      width="50" 
+      height="50" 
+      style="object-fit: contain; margin: 0;"
+    ></span>
+    </h4>
+    </div>
+    <div class= "col md-4" id = "vidworking">
+      <video controls>
+        <source src="your-video-file.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  
+  
+    
+  
+</div>
+  </section>
+  
+  <!-- Testimonials Section --> 
+   <section class="testimonial-slider" id="testimonials" data-aos="fade-right">
+    <div class="container">
+      <h2 class="text-center mb-5">What Our Users Say</h2>
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="testimonial-item">
+            <p>“Apply Smart helped me get my dream job in just two weeks!”</p>
+            <strong>- Himanshu Chaudhary</strong>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-item">
+            <p>“The resume builder is a life-saver. Loved the simplicity.”</p>
+            <strong>- Alankrit Agrawal</strong>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-item">
+            <p>“I applied to 30 jobs with one click. Super fast and effective.”</p>
+            <strong>- Daksh Meetha</strong>
+          </div>
+        </div>
+        </div>
+      
+      <div class = "row">
+        <div class="col-md-4">
+          <div class="testimonial-item">
+            <p>“Helped me to secure interview for my dream jobb!”</p>
+            <strong>- Harsh gupta</strong>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="testimonial-item">
+            <p>"Best feature this site provides is resume building!!”</p>
+            <strong>- Satvik duddu</strong>
+          </div>
+        </div>
+        
+      
+    </div>
+    </div>
+
+    
+  </section>
+  <section class = "join free" data-aos="fade-up">
+    <div class = "container text-center">
+        <h1 style = "margin-bottom: 50px;"> Ready to get <span style="color: aqua;"> Started</span> </h1>
+        <h5 style="margin-bottom: 50px;">Try our AI powered Job application automation tool to automate job search</h5>
+
+    </div>
+    <div class = "free-button mx-auto" style = "width: fit-content; margin-bottom: 60px;">
+        <h5>Start your journey FREE</h5>
+    </div>
+
+  </section>
+  
+  <!-- Footer -->  <footer class="footer">
+  <div class="container d-flex justify-content-between align-items-start flex-wrap">
+    <!-- Left Section -->
+    <div class="footer-left">
+      <div class="d-flex align-items-center mb-3">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" width="40" height="40" alt="White Fox Logo" class="me-2" />
+        <h5 class="mb-0 fw-bold text-light">Apply Smart</h5>
+      </div>
+      <p style="max-width: 300px; color: #ffffff; font-weight: 600;">
+        Automated job applications to help you land your dream job faster.
+      </p>
+    </div>
+
+    <!-- Right Section -->
+    <div class="footer-right d-flex flex-wrap">
+      <div class="me-5">
+        <h6 class="text-light">Tools</h6>
+        <ul class="list-unstyled text-muted">
+          <li><a href="#" class="text-decoration-none ">Resume Builder</a></li>
+          <li><a href="#" class="text-decoration-none ">Application Tracker</a></li>
+          <li><a href="#" class="text-decoration-none ">Job Suggestions</a></li>
+        </ul>
+      </div>
+      <div class="me-5">
+        <h6 class="text-light">Features</h6>
+        <ul class="list-unstyled ">
+          <li><a href="#" class="text-decoration-none ">One-Click Apply</a></li>
+          <li><a href="#" class="text-decoration-none ">AI Recommendations</a></li>
+          <li><a href="#" class="text-decoration-none ">Custom Filters</a></li>
+        </ul>
+      </div>
+      <div class="me-5">
+        <h6 class="text-light">Support</h6>
+        <ul class="list-unstyled ">
+          <li><a href="#" class="text-decoration-none ">FAQs</a></li>
+          <li><a href="#" class="text-decoration-none ">Help Center</a></li>
+          <li><a href="#" class="text-decoration-none ">Guides</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6 class="text-light">Contact</h6>
+        <ul class="list-unstyled ">
+          <li>Email: <a href="mailto:applysmart@gmail.com" class="text-decoration-none ">applysmart@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-4 ">
+    &copy; 2025 Apply Smart. All rights reserved. | <a href="#" class="text-decoration-none text-light">Privacy Policy</a> | <a href="#" class="text-decoration-none text-light">Terms</a>
+  </div>
+</footer>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  AOS.init({
+    duration: 1200, // Animation duration in milliseconds
+    once: true, // Whether animation should happen only once
+  });
+</script>
+
+</body>
+</html>
