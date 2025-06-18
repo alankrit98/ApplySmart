@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #b0b0b0;
+  background-color: red;
   margin: 0;
   padding: 0;
 }
@@ -61,5 +61,11 @@ input {
 }
 
 .toggle-link:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.account {
+  text-align: center;
+  margin-top: 15px;
 }
