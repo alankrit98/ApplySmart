@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleToSignup = document.querySelector("#toggleToSignup");
   const toggleToLogin = document.querySelector("#toggleToLogin");
 
-  const API = "http://localhost:5000/api";
+  const API = "https://applysmart-38ep.onrender.com/api";
 
   toggleToSignup.addEventListener("click", (e) => {
     e.preventDefault();
