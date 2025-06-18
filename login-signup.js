@@ -4,9 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggleToSignup = document.querySelector("#toggleToSignup");
   const toggleToLogin = document.querySelector("#toggleToLogin");
 
-  const API_URL = "http://localhost:5000/api";
+  const API = "http://localhost:5000/api";
 
-  // Toggle
   toggleToSignup.addEventListener("click", (e) => {
     e.preventDefault();
     loginForm.style.display = "none";
@@ -19,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loginForm.style.display = "block";
   });
 
-  // Signup Handler
   signupForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const name = document.querySelector("#signupName").value.trim();
@@ -27,47 +25,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.querySelector("#signupPassword").value;
 
     try {
-      const res = await fetch(`${API_URL}/signup`, {
+      const res = await fetch(`${API}/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, password }),
       });
-
       const data = await res.json();
       alert(data.message);
 
       if (res.ok) {
         signupForm.reset();
-        signupForm.style.display = "none";
-        loginForm.style.display = "block";
+        toggleToLogin.click();
       }
     } catch (err) {
-      alert("Signup failed.");
+      alert("Signup failed. Please try again.");
     }
   });
 
-  // Login Handler
   loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const email = document.querySelector("#loginEmail").value.trim();
     const password = document.querySelector("#loginPassword").value;
 
     try {
-      const res = await fetch(`${API_URL}/login`, {
+      const res = await fetch(`${API}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
       const data = await res.json();
       alert(data.message);
 
       if (res.ok) {
         loginForm.reset();
-        // Redirect to dashboard or home here
+        window.location.href = "applicationtracker.html"; // or landing.html
       }
     } catch (err) {
-      alert("Login failed.");
+      alert("Login failed. Please try again.");
     }
   });
 });
