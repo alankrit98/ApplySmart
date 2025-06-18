@@ -14,32 +14,38 @@
             color: #333;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-
-        .header {
+        .top-bar {
             display: flex;
             align-items: center;
-            margin-bottom: 30px;
+            justify-content: flex-start;
+            background-color: #eaeaea;
+            padding: 5px 20px;
+            color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: #333;
         }
 
-        .header img {
-            width: 50px;
-            height: 50px;
-            margin-right: 15px;
+        .top-bar img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
         }
 
-        .header h1 {
-            font-size: 24px;
-            margin: 0;
-            color: #007bff;
+        .top-bar h1 {
+            font-size: 20px;
+            margin-left: 5px;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto 30px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
@@ -52,13 +58,64 @@
             margin-bottom: 30px;
         }
 
-        label {
+         label {
             display: block;
             font-weight: 500;
             margin-bottom: 8px;
         }
 
-        input, select, .options-container {
+        .options-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .option {
+            flex: 1 1 calc(50% - 10px);
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .option:hover {
+            border-color: #007bff;
+        }
+
+        .option.selected {
+            border-color: #007bff;
+            box-shadow: 0 0 10px #007bff;
+        }
+
+        .continue-btn, .back-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            color: #fff;
+            background: #007bff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .continue-btn:hover, .back-btn:hover {
+            background: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    
+
+        input, select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
@@ -73,47 +130,7 @@
             outline: none;
         }
 
-        .options-container {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .option {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            text-align: center;
-            cursor: pointer;
-            transition: border-color 0.3s;
-        }
-
-        .option:hover, .option.selected {
-            border-color: #007bff;
-        }
-
-        .continue-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            font-size: 18px;
-            color: #fff;
-            background: #007bff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .continue-btn:hover {
-            background: #0056b3;
-        }
-
-        .hidden {
-            display: none;
-        }
+        
 
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -126,12 +143,12 @@
     </style>
 </head>
 <body>
-    <div class="container fade-in">
-        <div class="header">
-            <img src="company-logo.png" alt="Company Logo">
-            <h1>Company Name</h1>
-        </div>
+    <div class="top-bar">
+        <img src="https://cdn-icons-png.flaticon.com/512/616/616554.png" alt="Company Logo">
+        <h1>  Apply Smart</h1>
+    </div>
 
+    <div class="container fade-in">
         <!-- Step 1 -->
         <div id="step1">
             <h2>Step 1: Basic Information</h2>
@@ -143,7 +160,7 @@
             <div class="form-group">
                 <label for="jobTitle">Desired Job Title</label>
                 <select id="jobTitle">
-                    <option value="">Select a job title</option>
+                     <option value="">Select a job title</option>
                     <option value="Software Engineer">Software Engineer</option>
                     <option value="Data Scientist">Data Scientist</option>
                     <option value="Frontend Developer">Frontend Developer</option>
@@ -207,8 +224,9 @@
         </div>
 
         <!-- Step 2 -->
-        <div id="step2" class="hidden">
+       <div id="step2" class="hidden">
             <h2>Step 2: Additional Information</h2>
+            
             <div class="form-group">
                 <label>Experience</label>
                 <div class="options-container">
@@ -239,6 +257,7 @@
                 </div>
             </div>
 
+            <button class="back-btn" onclick="showStep1()">Back to Step 1</button>
             <button class="continue-btn">Submit</button>
         </div>
     </div>
@@ -247,6 +266,11 @@
         function showStep2() {
             document.getElementById("step1").classList.add("hidden");
             document.getElementById("step2").classList.remove("hidden");
+        }
+
+        function showStep1() {
+            document.getElementById("step2").classList.add("hidden");
+            document.getElementById("step1").classList.remove("hidden");
         }
 
         function selectOption(element) {
