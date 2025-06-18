@@ -43,25 +43,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   loginForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = document.querySelector("#loginEmail").value.trim();
-    const password = document.querySelector("#loginPassword").value;
+  e.preventDefault();
+  const email = document.querySelector("#loginEmail").value.trim();
+  const password = document.querySelector("#loginPassword").value;
 
-    try {
-      const res = await fetch(`${API}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-      const data = await res.json();
-      alert(data.message);
+  try {
+    const res = await fetch(`${API}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await res.json();
+    alert(data.message);
 
-      if (res.ok) {
-        loginForm.reset();
-        window.location.href = "applicationtracker.html"; // or landing.html
-      }
-    } catch (err) {
-      alert("Login failed. Please try again.");
+    if (res.ok) {
+      loginForm.reset();
+      window.top.location.href = "applyform.html"; // Full-page redirection
     }
-  });
+  } catch (err) {
+    alert("Login failed. Please try again.");
+  }
+});
+
 });
